@@ -10,7 +10,7 @@ import { useState } from 'react'
 
 function App() {
 
-  const [selectedChatUser, setSelectedChatUser] = useState(users[3]);
+  const [selectedChatUser, setSelectedChatUser] = useState("");
 
   return (
     <>
@@ -18,8 +18,8 @@ function App() {
         <Routes>
           <Route path='/' element={<LoginPage />} />
           <Route path='/login' element={<LoginPage />} />
-          <Route path='/user/:id' element={<ChatPage selectedChatUser={selectedChatUser} setSelectedChatUser={setSelectedChatUser} />} />
-          <Route path='/user/:loggedUsername/conversation/:conversationUsername' element={<ConversationPage loggedinUser={users[0]} selectedChatUser={selectedChatUser}/>} />
+          <Route path='/user/:loggedinUsername' element={<ChatPage selectedChatUser={selectedChatUser} setSelectedChatUser={setSelectedChatUser} />} />
+          <Route path='/user/:loggedinUsername/conversation/:conversationUsername' element={<ConversationPage selectedChatUser={selectedChatUser}/>} />
           <Route path="*" element={<NoPage />} />
 
         </Routes>

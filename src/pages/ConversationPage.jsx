@@ -5,15 +5,15 @@ import ConversationBox from '../components/ConversationBox';
 
 const ConversationPage = ({ loggedinUser, selectedChatUser }) => {
 
-    const { loggedUsername, conversationUsername } = useParams();
+    const { loggedinUsername, conversationUsername } = useParams();
     const conversationUser = users.filter((user) => user.username === conversationUsername)[0];
     console.log(conversationUser)
     return (
 
         <>
-            <div className='w-full h-[100vh] flex bg-gradient-to-r from-indigo-400 to-cyan-500 p-0'>
+            <div className='w-full h-[100vh] flex bg-gradient-to-r from-indigo-400/20 to-cyan-500 p-0'>
 
-                <ConversationBox loggedinUser={loggedinUser} selectedChatUser={selectedChatUser}/>
+                <ConversationBox loggedinUsername={loggedinUsername} selectedChatUser={selectedChatUser}/>
 
             </div>
 

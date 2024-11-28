@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 
-const ConversationCard = ({loggedinUser, user, lastMessage, time, readStatus, setSelectedChatUser}) => {
+const ConversationCard = ({loggedinUsername, user, lastMessage, time, readStatus, setSelectedChatUser}) => {
 
     const nameRef = useRef();
     const lastMessageRef = useRef();
@@ -35,7 +35,7 @@ const ConversationCard = ({loggedinUser, user, lastMessage, time, readStatus, se
 
     const handleChatClick = () => {
         if (getWindowDimension().width <= 767){
-            navigate(`/user/${loggedinUser.username}/conversation/${user.username}`)
+            navigate(`/user/${loggedinUsername}/conversation/${user.username}`)
         }
         setSelectedChatUser(user)
         

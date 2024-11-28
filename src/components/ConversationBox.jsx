@@ -1,20 +1,19 @@
 import React from 'react'
 import ConversationHeader from './ConversationHeader'
 import ConversationMessageBox from './ConversationMessageBox';
+import Conversations from './Conversations';
 
-const ConversationBox = ({ loggedinUser, selectedChatUser }) => {
+const ConversationBox = ({ loggedinUsername, selectedChatUser }) => {
 
     return (
         <>
             <div className='w-full h-full bg-gray-200/70 flex flex-col justify-between'>
 
-                <ConversationHeader loggedinUser={loggedinUser} selectedChatUser={selectedChatUser} />
+                <ConversationHeader loggedinUsername={loggedinUsername} selectedChatUser={selectedChatUser} />
 
-                <div className='w-full h-full overflow-auto p-2 px-4'>
-                    <div>Hi, How are you?</div>
-                </div>
+                <Conversations loggedinUsername={loggedinUsername} selectedChatUser={selectedChatUser}/>
 
-                <ConversationMessageBox />
+                <ConversationMessageBox selectedChatUser={selectedChatUser}/>
             </div>
         </>
     )

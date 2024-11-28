@@ -21,6 +21,7 @@ const users = [
         Age: 32,
         profileImg : profileImg1,
         onlineStatus : "online",
+        contacts : ["aditi", "aditya23", "anushka", "varun", "aditya", "hritik", "shraddha", "akshay", "priyanka", "tiger", "rohit" ],
     },
     {
         name : "Aditya Roy Kapoor",
@@ -30,6 +31,7 @@ const users = [
         Age: 36,
         profileImg : profileImg2,
         onlineStatus : "offline",
+        contacts : ["testUser", "aditi", "anushka", "varun", "aditya", "hritik", "shraddha", "akshay", "priyanka", "tiger", "rohit" ],
     },
     {
         name : "Aditi Rai",
@@ -39,6 +41,7 @@ const users = [
         Age: 34,
         profileImg : profileImg3,
         onlineStatus : "offline",
+        contacts : ["testUser", "aditya23", "anushka", "varun", "aditya", "hritik", "shraddha", "akshay", "priyanka", "tiger", "rohit" ],
     },
     {
         name : "Anushka Sharma",
@@ -48,6 +51,7 @@ const users = [
         Age: 37,
         profileImg : profileImg4,
         onlineStatus : "online",
+        contacts : ["testUser", "aditi", "aditya23", "varun", "aditya", "hritik", "shraddha", "akshay", "priyanka", "tiger", "rohit" ],
     },
     {
         name : "Varun Dhawan",
@@ -57,6 +61,7 @@ const users = [
         Age: 35,
         profileImg : profileImg5,
         onlineStatus : "offline",
+        contacts : ["testUser", "aditi", "aditya23", "anushka", "aditya", "hritik", "shraddha", "akshay", "priyanka", "tiger", "rohit" ],
     },
     {
         name : "Aditya Chopra",
@@ -66,6 +71,7 @@ const users = [
         Age: 36,
         profileImg : profileImg6,
         onlineStatus : "offline",
+        contacts : ["testUser", "aditi", "aditya23", "anushka", "varun", "hritik", "shraddha", "akshay", "priyanka", "tiger", "rohit" ],
     },
     {
         name : "Hritik Roshan",
@@ -75,6 +81,7 @@ const users = [
         Age: 42,
         profileImg : profileImg7,
         onlineStatus : "online",
+        contacts : ["testUser", "aditi", "aditya23", "anushka", "varun", "aditya", "shraddha", "akshay", "priyanka", "tiger", "rohit" ],
     },
     {
         name : "Shraddha Kapoor",
@@ -84,6 +91,7 @@ const users = [
         Age: 32,
         profileImg : profileImg8,
         onlineStatus : "online",
+        contacts : ["testUser", "aditi", "aditya23", "anushka", "varun", "aditya", "hritik", "akshay", "priyanka", "tiger", "rohit" ],
     },
     {
         name : "Akshay Kumar",
@@ -93,6 +101,7 @@ const users = [
         Age: 53,
         profileImg : profileImg9,
         onlineStatus : "online",
+        contacts : ["testUser", "aditi", "aditya23", "anushka", "varun", "aditya", "hritik", "shraddha", "priyanka", "tiger", "rohit" ],
     },
     {
         name : "Priyanka Chopra",
@@ -102,6 +111,7 @@ const users = [
         Age: 40,
         profileImg : profileImg10,
         onlineStatus : "offline",
+        contacts : ["testUser", "aditi", "aditya23", "anushka", "varun", "aditya", "hritik", "shraddha", "akshay", "tiger", "rohit" ],
     },
     {
         name : "Tiger Shroff",
@@ -111,6 +121,7 @@ const users = [
         Age: 28,
         profileImg : profileImg11,
         onlineStatus : "online",
+        contacts : ["testUser", "aditi", "aditya23", "anushka", "varun", "aditya", "hritik", "shraddha", "akshay", "priyanka", "rohit" ],
     },
     {
         name : "Rohit Shetty",
@@ -120,6 +131,7 @@ const users = [
         Age: 45,
         profileImg : profileImg12,
         onlineStatus : "offline",
+        contacts : ["testUser", "aditi", "aditya23", "anushka", "varun", "aditya", "hritik", "shraddha", "akshay", "priyanka", "tiger"],
     },
 ]
 
