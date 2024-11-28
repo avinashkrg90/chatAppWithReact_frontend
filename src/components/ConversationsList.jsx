@@ -6,7 +6,7 @@ import users from './usersData';
 
 const ConversationsList = () => {
   return (
-    <div className='w-full p-2 h-full bg-gray-200/50 flex flex-col '>
+    <div className='w-full p-0 lg:p-2 h-full bg-gray-200/50 flex flex-col '>
         <div className='w-full p-5 relative'>
             <input type="text" placeholder='Search' className='w-full h-12 rounded-lg p-2 px-4 outline-none bg-gray-50/80 hover:bg-gray-50 focus:bg-gray-50'/>
             <FaMagnifyingGlass className='absolute top-9 right-8 text-gray-500 cursor-pointer'/>
