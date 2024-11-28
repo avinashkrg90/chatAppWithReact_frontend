@@ -34,9 +34,7 @@ const ConversationCard = ({loggedinUser, user, lastMessage, time, readStatus, se
     }
 
     const handleChatClick = () => {
-        if (getWindowDimension().width > 767){
-
-        }else{
+        if (getWindowDimension().width <= 767){
             navigate(`/user/${loggedinUser.username}/conversation/${user.username}`)
         }
         setSelectedChatUser(user)
