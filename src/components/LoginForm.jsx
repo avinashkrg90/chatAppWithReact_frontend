@@ -81,27 +81,25 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className='border-1 border-gray-200 p-8 px-2 sm:px-8 rounded-xl bg-gray-200/50 w-[90%] max-w-[600px] flex flex-col items-center'>
+      <div className='border-1 border-gray-200 p-8 px-2 sm:px-8 rounded-xl bg-gray-100/60 w-[90%] max-w-[600px] flex flex-col items-center'>
         {
-          showLogin ? <h1 className='text-xl sm:text-2xl text-black mb-6'>Welcome back</h1>
-            : <h1 className='text-xl sm:text-2xl text-black mb-6'>Welcome to chat app</h1>
+          showLogin ? <h1 className='text-xl sm:text-2xl text-black mb-5'>Welcome back</h1>
+            : <h1 className='text-xl sm:text-2xl text-black mb-5'>Welcome to chat app</h1>
         }
         {
           showLogin ? " " :
             <>
-              <div className='w-full'>
+              <div className='w-full mb-2'>
                 <div className='relative m-auto w-20 h-20 rounded-full overflow-hidden'>
                   <img className='object-cover m-auto border-2 w-20 h-20 rounded-full' src={preview ? preview : user} alt="user Avatar" />
                   <input onChange={setAvatar} type="file" id='userAvatar' className='hidden' />
 
                   <label htmlFor="userAvatar" className='z-10  absolute top-[0px] left-[0px] w-20 h-20 rounded-full cursor-pointer'>
-                    <div className={`w-full h-full flex justify-center items-center ${preview ? "text-gray-800/0 hover:text-sky-600" : 'text-gray-800/100 hover:text-sky-600'} ${preview ? "bg-gray-200/10" : "bg-gray-200/70"} hover:bg-gray-200/90`}>
+                    <div className={`w-full h-full flex justify-center items-center ${preview ? "text-gray-800/0 hover:text-sky-600" : 'text-gray-800/100 hover:text-sky-600'} ${preview ? "bg-gray-200/10" : "bg-gray-200/70"} imageInput`}>
                       <FaUpload className={`text-2xl`} />
                     </div>
                   </label>
                 </div>
-
-
               </div>
               <div className='float-left w-[70%] mb-1'><label htmlFor="firstName" className='labelForInput'>First name</label></div>
               <input onChange={(e) => setFormData({ ...formData, firstname: e.target.value })} type="text" placeholder='First name' className='inputBox' />
