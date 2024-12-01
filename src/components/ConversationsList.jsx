@@ -3,7 +3,7 @@ import { FaMagnifyingGlass, FaPlus } from "react-icons/fa6";
 import ConversationCard from './ConversationCard';
 import users from './usersData';
 
-const ConversationsList = ({ loggedinUsername, setSelectedChatUser, setContactModalVisible, allMessages }) => {
+const ConversationsList = ({ loggedinUsername, setSelectedChatUser, setContactModalVisible, allMessages, setAllMessages }) => {
     const [contactUsers, setContactUsers] = useState();
     const [searchedUsers, setSearchedUsers] = useState(users);
     const [searchText, setSearchText] = useState("");
@@ -38,7 +38,7 @@ const ConversationsList = ({ loggedinUsername, setSelectedChatUser, setContactMo
             <div className='w-full h-full p-2 overflow-auto'>
                 {
                     searchedUsers.map((user, index) => {
-                        return <ConversationCard key={index} allMessages={allMessages} loggedinUsername={loggedinUsername} user={user} setSelectedChatUser={setSelectedChatUser} onlineStatus={user.onlineStatus} readStatus="read" />
+                        return <ConversationCard key={index} allMessages={allMessages} setAllMessages={setAllMessages} loggedinUsername={loggedinUsername} user={user} setSelectedChatUser={setSelectedChatUser} onlineStatus={user.onlineStatus} />
                     })
                 }
             </div>

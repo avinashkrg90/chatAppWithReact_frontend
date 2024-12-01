@@ -11,9 +11,9 @@ const ConversationBox = ({ loggedinUsername, selectedChatUser, allMessages, setA
 
                 <ConversationHeader loggedinUsername={loggedinUsername} selectedChatUser={selectedChatUser} />
 
-                <Conversations loggedinUsername={loggedinUsername} selectedChatUser={selectedChatUser} allMessages={allMessages}/>
+                <Conversations loggedinUsername={loggedinUsername} selectedChatUser={selectedChatUser} allMessages={allMessages} />
 
-                <ConversationMessageBox selectedChatUser={selectedChatUser} loggedinUsername={loggedinUsername} allMessages={allMessages} setAllMessages={setAllMessages}/>
+                <ConversationMessageBox selectedChatUser={selectedChatUser} loggedinUsername={loggedinUsername} allMessages={allMessages} setAllMessages={setAllMessages} />
             </div>
         </>
     )

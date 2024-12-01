@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 
-const ConversationCard = ({ loggedinUsername, user, readStatus, setSelectedChatUser, allMessages }) => {
+const ConversationCard = ({ loggedinUsername, user, setSelectedChatUser, allMessages, setAllMessages }) => {
 
     const nameRef = useRef();
     const lastMessageRef = useRef();
@@ -38,15 +38,26 @@ const ConversationCard = ({ loggedinUsername, user, readStatus, setSelectedChatU
             navigate(`/user/${loggedinUsername}/conversation/${user.username}`)
         }
         setSelectedChatUser(user)
+
+        // updating the read status of last messages for user
+        let updatedMsg = Object.assign({}, allMessages); // creating a copy of object not just the reference
+
+        if (updatedMsg[loggedinUsername][user.username].at(-1)) {
+            updatedMsg[loggedinUsername][user.username].at(-1)["read"] = "read"
+        }
+        setAllMessages(updatedMsg)
+
     }
 
     const lastMsgDetail = () => {
         const msgArray = allMessages[loggedinUsername] ? (allMessages[loggedinUsername][user.username] ? allMessages[loggedinUsername][user.username] : "") : ""
         let lastMsg;
         let lastMsgTime;
+        let lastMsgReadStatus
         if (msgArray) {
             lastMsg = msgArray.at(-1).text; // last element of the array
             lastMsgTime = msgArray.at(-1).timestamp
+            lastMsgReadStatus = msgArray.at(-1).read
         }
         let i = 6;
         let msgToDisplay = lastMsg;
@@ -67,14 +78,14 @@ const ConversationCard = ({ loggedinUsername, user, readStatus, setSelectedChatU
             msgToDisplay = msgToDisplay + "..."
 
         try {
-            if (lastMsgTime){
+            if (lastMsgTime) {
                 lastMsgTime = lastMsgTime.split(":")[0] + ":" + lastMsgTime.split(":")[1]
             }
         } catch (error) {
             console.log(error)
         }
 
-        return { msgToDisplay, lastMsgTime }
+        return { msgToDisplay, lastMsgTime, lastMsgReadStatus }
     }
     const lastMessage = lastMsgDetail();
 
@@ -92,7 +103,7 @@ const ConversationCard = ({ loggedinUsername, user, readStatus, setSelectedChatU
                 <div className='w-[20%] h-full flex flex-col items-end justify-around'>
                     <div ref={timeRef} className='text-gray-600 text-[0.8rem] sm:text-[0.9rem]'>{lastMessage.lastMsgTime}</div>
                     <div>
-                        <div className={`w-2 h-2 rounded-full ${readStatus === "unread" ? "bg-red-600" : ""}`}></div>
+                        <div className={`w-2 h-2 rounded-full ${lastMessage.lastMsgReadStatus === "unread" ? "bg-red-600" : ""}`}></div>
                     </div>
                 </div>
             </div>

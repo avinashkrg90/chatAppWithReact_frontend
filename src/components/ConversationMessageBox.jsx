@@ -20,11 +20,13 @@ const ConversationMessageBox = ({ selectedChatUser, loggedinUsername, allMessage
     const handleSendClick = () => {
         if (typedMessage) {
             const dateTime = new Date();
-            const hour = dateTime.getHours();
-            const min = dateTime.getMinutes();
+            let hour = dateTime.getHours();
+            hour = String(hour).padStart(2, '0');
+            let min = dateTime.getMinutes();
+            min = String(min).padStart(2, '0');
 
             let updatedMsg = Object.assign({}, allMessages); // creating a copy of object not just the reference
-            const newMsg = { direction: "to", text: typedMessage, timestamp: `${hour}:${min}` };
+            const newMsg = { direction: "to", text: typedMessage, timestamp: `${hour}:${min}`, read: "read" };
 
             if (updatedMsg[loggedinUsername]) {
                 if (updatedMsg[loggedinUsername][selectedChatUser.username]) {
@@ -60,7 +62,7 @@ const ConversationMessageBox = ({ selectedChatUser, loggedinUsername, allMessage
 
     return (
         <div className={`w-full px-2 sm:px-4 pb-2 sm:pb-3 ${selectedChatUser ? "" : "opacity-50"}`}>
-            <div className={`bg-gray-100/90 w-full rounded-lg flex items-center px-2 py-2${selectedChatUser ? "" : "pointer-events-none"}`}>
+            <div className={`bg-gray-100/90 w-full rounded-lg flex items-center px-2 py-2 ${selectedChatUser ? "" : "pointer-events-none"}`}>
                 <div>
                     <input type="file" className='hidden' id='attachInput' />
                     <label htmlFor="attachInput">
