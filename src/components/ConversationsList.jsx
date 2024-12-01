@@ -20,7 +20,7 @@ const ConversationsList = ({ loggedinUsername, setSelectedChatUser, setContactMo
     useEffect(()=>{
         const loggedInUser = users.filter((user)=>user.username === loggedinUsername)[0];
         setSearchedUsers((users.filter((user) => loggedInUser.contacts.includes(user.username))));
-        setContactUsers(searchedUsers);
+        setContactUsers((users.filter((user) => loggedInUser.contacts.includes(user.username))));
     }, [])
 
     return (

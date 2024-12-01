@@ -5,7 +5,7 @@ import { FaXmark } from "react-icons/fa6";
 
 const ContactListModal = ({ setContactModalVisible }) => {
   return (
-    <div className='fixed inset-0 flex justify-center items-center bg-gray-800/80 z-40'>
+    <div className='fixed inset-0 flex justify-center items-center bg-gray-800/90 z-40'>
       <div className='flex flex-col max-w-[90vw] w-[450px]'>
         <div>
           <FaXmark onClick={() => setContactModalVisible(false)} className='z-50 cursor-pointer text-white float-right text-2xl h-8 p-1' />
