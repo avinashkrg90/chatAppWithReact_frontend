@@ -3,7 +3,7 @@ import { FaMagnifyingGlass, FaPlus } from "react-icons/fa6";
 import ConversationCard from './ConversationCard';
 import users from './usersData';
 
-const ConversationsList = ({ loggedinUsername, setSelectedChatUser }) => {
+const ConversationsList = ({ loggedinUsername, setSelectedChatUser, setContactModalVisible, allMessages }) => {
     const [contactUsers, setContactUsers] = useState();
     const [searchedUsers, setSearchedUsers] = useState(users);
     const [searchText, setSearchText] = useState("");
@@ -31,14 +31,14 @@ const ConversationsList = ({ loggedinUsername, setSelectedChatUser }) => {
             </div>
             <div className='w-full flex justify-between items-center p-2 px-4'>
                 <h2 className='uppercase text-indigo-900 font-semibold'>conversations</h2>
-                <div className='bg-white w-8 h-8 rounded-full flex justify-center items-center cursor-pointer hover:text-indigo-600 text-gray-500'>
+                <div onClick={()=>setContactModalVisible(true)} className='bg-white w-8 h-8 rounded-full flex justify-center items-center cursor-pointer hover:text-indigo-600 text-gray-500'>
                     <FaPlus className='text-lg' />
                 </div>
             </div>
             <div className='w-full h-full p-2 overflow-auto'>
                 {
                     searchedUsers.map((user, index) => {
-                        return <ConversationCard key={index} loggedinUsername={loggedinUsername} user={user} setSelectedChatUser={setSelectedChatUser} lastMessage="how are you?" time="09:35 PM" onlineStatus={user.onlineStatus} readStatus="read" />
+                        return <ConversationCard key={index} allMessages={allMessages} loggedinUsername={loggedinUsername} user={user} setSelectedChatUser={setSelectedChatUser} onlineStatus={user.onlineStatus} readStatus="read" />
                     })
                 }
             </div>

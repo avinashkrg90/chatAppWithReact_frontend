@@ -113,6 +113,10 @@ const LoginForm = () => {
         <div className='float-left w-[70%] mb-1'><label htmlFor="password" className='labelForInput'>Password</label></div>
         <input onChange={(e) => setFormData({ ...formData, password: e.target.value })} type="password" placeholder='Password' className='inputBox' value={formData.password} />
         {
+          showLogin ?
+          <h3 className='mb-2'>Use 'testUser' as username and password for default login.</h3> : ""
+        }
+        {
           showLogin ? <button onClick={handleLoginClick} type='submit' className='btn'>Log in</button>
             : <button onClick={handleSignupClick} type='submit' className='btn'>Sign up</button>
         }
