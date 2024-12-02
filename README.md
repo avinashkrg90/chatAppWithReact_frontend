@@ -10,11 +10,13 @@ This is a chat web application created with React library. The application is re
 - Accessibility is taken care, 'rem's and 'em's units are used for sizes.
 - Fully responsive application to run on all range of screen sizes
 - Search option available for searching chat users.
-- Multi-line message typing possible with dynamic siz eof text box
+- Multi-line message typing possible with dynamic automatic of text box
 - In desktop mode, feeding a new line character with enter and sending the message using the same enter key with Ctrl key makes users very fast with typing and sending messages
 - Login and signup pages are there for user login and creation.
 - Modal for contact list accessible for adding a user in the chat.
 - Online status of user and last message read status is shown in a visual appealing way.
+- Notifications are shown using toast messages.
+- A customized page for 'No page found error 404' is created to direct the users to a valid page.
 
 ## Technology used
 
@@ -43,10 +45,10 @@ To run tests in development mode, run the following command
 ## Screenshots
 
 Login page
-![App Screenshot](src/assets/ss6.png)
+![App Screenshot](src/assets/ss7.png)
 
 Sign up page
-![App Screenshot](src/assets/ss7.png)
+![App Screenshot](src/assets/ss6.png)
 
 Home page/ chat page
 ![App Screenshot](src/assets/ss1.png)
