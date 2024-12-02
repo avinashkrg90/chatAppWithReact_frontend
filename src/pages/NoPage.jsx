@@ -11,7 +11,7 @@ const NoPage = () => {
             <p className='text-gray-500 font-semibold text-2xl'>Here are some helpful links:</p>
             <div className='flex flex-col gap-5 mt-4'> 
                 <Link to='/login' className='bg-red-600 text-white rounded-full p-2 px-4 hover:bg-red-500'>Login page</Link>
-                <Link to='/user/3' className='bg-red-600 text-white rounded-full p-2 px-4 hover:bg-red-500'>Chat page</Link>
+                <Link to='/user/testUser' className='bg-red-600 text-white rounded-full p-2 px-4 hover:bg-red-500'>Chat page</Link>
             </div>
         </div>
     </>
