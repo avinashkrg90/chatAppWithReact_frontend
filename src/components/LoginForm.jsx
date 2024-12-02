@@ -114,7 +114,7 @@ const LoginForm = () => {
         <input onChange={(e) => setFormData({ ...formData, password: e.target.value })} type="password" placeholder='Password' className='inputBox' value={formData.password} />
         {
           showLogin ?
-          <h3 className='mb-2'>Use 'testUser' as username and password for default login.</h3> : ""
+          <h3 className='mb-2 text-center'>Use 'testUser' as username and password for default login.</h3> : ""
         }
         {
           showLogin ? <button onClick={handleLoginClick} type='submit' className='btn'>Log in</button>

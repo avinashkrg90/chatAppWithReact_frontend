@@ -12,7 +12,7 @@ const ContactListModal = ({ setContactModalVisible }) => {
         </div>
 
         <div className='flex flex-col bg-gradient-to-r from-indigo-400/70 to-cyan-400/70 max-h-[70vh] overflow-auto'>
-          <div className='w-full text-center text-gray-100 bg-gray-800 p-2'>
+          <div className='w-full text-center text-black bg-gray-400 p-3'>
 
             Contact List
 

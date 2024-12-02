@@ -42,6 +42,7 @@ const ConversationMessageBox = ({ selectedChatUser, loggedinUsername, allMessage
             setAllMessages(updatedMsg)
             setTypedMessage("")
             messageTextAreaRef.current.style.height = "auto";
+            // messageTextAreaRef.current.style.height = `${messageTextAreaRef.current.scrollHeight - 16}px`;
         }
 
     }
@@ -50,7 +51,7 @@ const ConversationMessageBox = ({ selectedChatUser, loggedinUsername, allMessage
         setTypedMessage(e.target.value)
         if (messageTextAreaRef.current) {
             messageTextAreaRef.current.style.height = "auto";
-            messageTextAreaRef.current.style.height = `${e.target.scrollHeight - 16}px`;
+            messageTextAreaRef.current.style.height = `${e.target.scrollHeight}px`;
         }
     }
 
@@ -69,7 +70,10 @@ const ConversationMessageBox = ({ selectedChatUser, loggedinUsername, allMessage
                         <IoAttach className='text-3xl cursor-pointer text-gray-800' />
                     </label>
                 </div>
-                <textarea onKeyDown={(e)=>handleKeyDown(e)} ref={messageTextAreaRef} onChange={(e) => handleMessageChange(e)} value={typedMessage} placeholder={`type your message here...  ${getWindowDimension().width>767 ? "(press 'enter' for newline, and 'CRTL+Enter' to send the message)" : ""}`} rows="1" name="message" id="message" className='text-[1rem] p-2 bg-transparent w-full outline-none max-h-[7.6rem] resize-none'></textarea>
+                <textarea onKeyDown={(e)=>handleKeyDown(e)} ref={messageTextAreaRef} onChange={(e) => handleMessageChange(e)} value={typedMessage} 
+                    placeholder={`type your message here...  ${getWindowDimension().width>767 ? "(press 'enter' for newline, and 'CRTL+Enter' to send the message)" : ""}`} 
+                    rows="1" name="message" id="message" className='text-[1rem] px-1 bg-transparent w-full outline-none max-h-[7.6rem] resize-none'>
+                </textarea>
                 <button onClick={handleSendClick} type='Submit' className='p-2 sm:p-3 sm:px-6 rounded-lg bg-gray-800 text-gray-200'><FaPaperPlane className='text-[1.35rem] text-gray-200' /></button>
             </div>
         </div>
