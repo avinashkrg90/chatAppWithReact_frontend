@@ -1,9 +1,8 @@
 import React from 'react'
-import users from './usersData'
 import ContactCard from './ContactCard'
 import { FaXmark } from "react-icons/fa6";
 
-const ContactListModal = ({ setContactModalVisible }) => {
+const ContactListModal = ({ setContactModalVisible, loggedinUsername, setUsers, users }) => {
   return (
     <div className='fixed inset-0 flex justify-center items-center bg-gray-800/90 z-40'>
       <div className='flex flex-col max-w-[90vw] w-[450px]'>
@@ -21,7 +20,8 @@ const ContactListModal = ({ setContactModalVisible }) => {
           <div className='p-0 px-6 bg-gray-50/70 w-full'>
             {
               users.map((user, index) => {
-                return <ContactCard key={index} contact={user} setContactModalVisible={setContactModalVisible} />
+                if (user.username !== loggedinUsername)
+                  return <ContactCard key={index} setUsers={setUsers} users={users} contact={user} setContactModalVisible={setContactModalVisible} loggedinUsername={loggedinUsername} />
               })
             }
           </div>

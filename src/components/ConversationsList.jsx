@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { FaMagnifyingGlass, FaPlus } from "react-icons/fa6";
 import ConversationCard from './ConversationCard';
-import users from './usersData';
+// import savedUsers from './usersData';
 
-const ConversationsList = ({ loggedinUsername, setSelectedChatUser, setContactModalVisible, allMessages, setAllMessages }) => {
+const ConversationsList = ({ loggedinUsername, setSelectedChatUser, setContactModalVisible, allMessages, setAllMessages, users={users} }) => {
+
     const [contactUsers, setContactUsers] = useState();
     const [searchedUsers, setSearchedUsers] = useState(users);
     const [searchText, setSearchText] = useState("");
 
     const handleSearchName = (e) => {
         setSearchText(e.target.value);
-        setSearchedUsers(contactUsers.filter((user)=>user.name.toLowerCase().includes(e.target.value)));
+        setSearchedUsers(contactUsers.filter((user)=>user.name.toLowerCase().includes(e.target.value.toLowerCase())));
     }
 
     const handleSearch = () => {
-        setSearchedUsers(contactUsers.filter((user)=>user.name.toLowerCase().includes(searchText)));
+        setSearchedUsers(contactUsers.filter((user)=>user.name.toLowerCase().includes(searchText.toLowerCase())));
     }
 
     useEffect(()=>{
         const loggedInUser = users.filter((user)=>user.username === loggedinUsername)[0];
         setSearchedUsers((users.filter((user) => loggedInUser.contacts.includes(user.username))));
         setContactUsers((users.filter((user) => loggedInUser.contacts.includes(user.username))));
-    }, [])
+    }, [users])
 
     return (
         <div className='w-full p-0 lg:p-2 h-full bg-gray-200/50 flex flex-col '>

@@ -5,6 +5,7 @@ import { GiConsoleController } from 'react-icons/gi';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast'
+import users from './usersData';
 
 const LoginForm = () => {
 
@@ -36,7 +37,7 @@ const LoginForm = () => {
         }
       }
     })
-    if (!userFound){
+    if (!userFound) {
       toast.error('User not found')
     }
     return result;
@@ -45,6 +46,20 @@ const LoginForm = () => {
   const handleLoginClick = (e) => {
     e.preventDefault();
     if (verifyCredentials()) {
+      const newUser =
+      {
+        name: formData.firstname + " " + formData.lastname,
+        username: formData.username,
+        password: formData.password,
+        Gender: "M",
+        Age: 30,
+        profileImg: preview,
+        onlineStatus: "online",
+        contacts: ["testUser", "aditi", "aditya23"],
+      }
+
+      users.push(newUser);
+
       navigate(`/user/${formData.username}`)
       toast.success(`Welcome, ${formData.username}`)
     }
@@ -114,7 +129,7 @@ const LoginForm = () => {
         <input onChange={(e) => setFormData({ ...formData, password: e.target.value })} type="password" placeholder='Password' className='inputBox' value={formData.password} />
         {
           showLogin ?
-          <h3 className='mb-2 text-center'>Use 'testUser' as username and password for default login.</h3> : ""
+            <h3 className='mb-2 text-center'>Use 'testUser' as username and password for default login.</h3> : ""
         }
         {
           showLogin ? <button onClick={handleLoginClick} type='submit' className='btn'>Log in</button>
